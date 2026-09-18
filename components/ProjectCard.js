@@ -8,7 +8,11 @@ export default function ProjectCard({ project, index = 0, className = "" }) {
       className={`group flex flex-col rounded-card border border-border hover:border-accent hover:shadow-[0_12px_28px_-16px_rgba(20,22,26,0.25)] hover:-translate-y-1 transition-all duration-200 overflow-hidden bg-card ${className}`}
     >
       <div className="p-3 bg-surface border-b border-border">
-        <ProjectMockup variant={index} />
+        <ProjectMockup
+          image={project.heroImage}
+          alt={project.title}
+          variant={index}
+        />
       </div>
 
       <div className="p-5 flex flex-col flex-1">

@@ -2,13 +2,35 @@
   "slug": "careerlogr",
   "order": 1,
   "title": "CareerLogr",
-  "tagline": "A job application tracker built to replace my own messy spreadsheet.",
+  "tagline": "Full-stack job search tracker built with MERN & TanStack Query to replace fragmented spreadsheets.",
   "status": "Deployed",
-  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+  "heroImage": "/projects/careerlogr.png",
+  "architectureImage": "/projects/careerlogr_dfd.png",
+  "stats": [
+    { "label": "Architecture", "value": "3-Tier RESTful" },
+    { "label": "Security", "value": "HttpOnly JWT" },
+    { "label": "State Mgmt", "value": "TanStack Query" }
+  ],
+  "tech": [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Tailwind CSS",
+    "TanStack Query",
+    "JWT"
+  ],
   "liveUrl": "https://careerlogr.vercel.app",
   "repoUrl": "https://github.com/utsomondal/careerlogr",
-  "problem": "TODO: what problem were you solving, and for whom?",
-  "approach": "TODO: what did you build, and what were the key decisions? (Reuse the Level 1 DFD from your README here.)",
-  "challenges": "TODO: what was hard, and how did you solve it?",
-  "result": "TODO: what's the outcome — deployed, used by X, what you learned?"
+  "problem": "Job seekers struggle to track multi-stage interviews and follow-ups across static spreadsheets. Traditional sheets lack real-time status updates, visual conversion metrics, and multi-user security. CareerLogr centralizes application workflows into a responsive, secure dashboard.",
+  "approach": [
+    "**Secure Authentication Flow:** Dual-layer auth issuing signed JWTs stored in `HttpOnly`, `SameSite=None` cookies to mitigate XSS and CSRF attack vectors.",
+    "**Middleware-Driven Sessions:** Express validation middleware intercepts protected routes to verify token signatures before controller execution, avoiding redundant DB lookups.",
+    "**Optimized Data Pipeline:** RESTful CRUD endpoints feeding dynamic Recharts analytics and TanStack Query client state for instant UI transitions."
+  ],
+  "challenges": [
+    "**Cross-Origin Cookie Security:** Resolved strict cross-domain browser policies between independent client (Vercel) and server deployments by configuring explicit CORS `credentials` and SSL flags.",
+    "**Server-State Synchronization:** Eliminated UI latency and stale data during high-frequency status changes through automated query cache invalidation on mutations."
+  ],
+  "result": "Successfully deployed in production with seamless session persistence and low-latency API responses. Replaced manual tracking spreadsheets with an automated system featuring robust cross-origin security and real-time state orchestration."
 }
