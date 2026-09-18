@@ -87,7 +87,7 @@ export default function Hero() {
             />
 
             {/* Circular Base Border & Background Frame */}
-            <div className="absolute bottom-0 w-60 sm:w-68 h-60 sm:h-68 rounded-full bg-surface border-2 border-border shadow-md overflow-hidden">
+            <div className="absolute bottom-0 w-60 sm:w-68 h-60 sm:h-68 rounded-full bg-card border-2 border-border shadow-md overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-tr from-accent/15 via-transparent to-transparent" />
             </div>
 
@@ -105,7 +105,7 @@ export default function Hero() {
             </div>
 
             {/* Location Badge */}
-            <div className="absolute bottom-2 -right-1 z-20 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-bg/90 backdrop-blur-md border border-border shadow-sm text-text">
+            <div className="absolute bottom-2 -right-1 z-20 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-card/95 backdrop-blur-md border border-border shadow-sm text-text">
               <MapPin className="w-3.5 h-3.5 text-accent shrink-0" />
               <span>Dhaka, BD</span>
             </div>

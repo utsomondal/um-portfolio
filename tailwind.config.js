@@ -7,9 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: "#FFFFFF",
-        surface: "#F7F7F8",
-        border: "#E5E5E8",
+        bg: "#F6F7F9",
+        card: "#FFFFFF",
+        surface: "#EEF0F3",
+        border: "#DEE1E7",
         text: "#14161A",
         muted: "#6E7180",
         accent: "#1266C4",

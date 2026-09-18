@@ -19,7 +19,7 @@ export default function AboutPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-16">
-        <div className="md:col-span-4 rounded-card p-4 border border-border">
+        <div className="md:col-span-4 rounded-card p-4 border border-border bg-card">
           <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden bg-surface mb-4">
             <Image
               src="/images/utso-avatar.jpg"
@@ -101,7 +101,7 @@ export default function AboutPage() {
         <h2 className="text-sm text-muted mb-6">Engineering principles</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="p-5 rounded-card border border-border">
+          <div className="p-5 rounded-card border border-border bg-card">
             <Code2 className="w-5 h-5 text-accent mb-3" />
             <h3 className="font-display font-semibold text-sm text-text mb-1">
               Clean &amp; modular
@@ -112,7 +112,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-card border border-border">
+          <div className="p-5 rounded-card border border-border bg-card">
             <Target className="w-5 h-5 text-accent mb-3" />
             <h3 className="font-display font-semibold text-sm text-text mb-1">
               User-centric
@@ -123,7 +123,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-5 rounded-card border border-border">
+          <div className="p-5 rounded-card border border-border bg-card">
             <Sparkles className="w-5 h-5 text-accent mb-3" />
             <h3 className="font-display font-semibold text-sm text-text mb-1">
               Always learning

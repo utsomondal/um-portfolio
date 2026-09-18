@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 export default function ContactCTA() {
   return (
     <section className="max-w-content mx-auto px-4 sm:px-6 py-16 sm:py-20 border-t border-border">
-      <div className="relative p-8 sm:p-12 rounded-card border border-border text-center flex flex-col items-center overflow-hidden">
+      <div className="relative p-8 sm:p-12 rounded-card border border-border bg-card text-center flex flex-col items-center overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute -top-16 left-1/2 -translate-x-1/2 w-56 h-56 bg-accent/10 rounded-full blur-3xl pointer-events-none"

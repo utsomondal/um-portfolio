@@ -36,8 +36,8 @@ export default function Navbar() {
         <nav
           className={`flex items-center justify-between px-3 py-2 rounded-full border transition-shadow duration-300 ${
             isScrolled
-              ? "bg-bg/85 backdrop-blur-xl border-border shadow-[0_8px_24px_-12px_rgba(20,22,26,0.18)]"
-              : "bg-bg/70 backdrop-blur-md border-border/70"
+              ? "bg-card/95 backdrop-blur-xl border-border shadow-[0_8px_24px_-12px_rgba(20,22,26,0.18)]"
+              : "bg-card/90 backdrop-blur-md border-border shadow-[0_2px_12px_-6px_rgba(20,22,26,0.12)]"
           }`}
         >
           <Link
@@ -61,7 +61,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.span
                       layoutId="active-pill"
-                      className="absolute inset-0 bg-bg rounded-full border border-border shadow-sm"
+                      className="absolute inset-0 bg-card rounded-full border border-border shadow-sm"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -113,7 +113,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.18, ease: "easeOut" }}
-              className="sm:hidden mt-2 p-3 rounded-2xl bg-bg border border-border shadow-lg flex flex-col gap-1 text-sm"
+              className="sm:hidden mt-2 p-3 rounded-2xl bg-card border border-border shadow-lg flex flex-col gap-1 text-sm"
             >
               {NAV_LINKS.map((link) => {
                 const isActive = checkIsActive(link.href);

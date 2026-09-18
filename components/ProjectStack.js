@@ -3,47 +3,35 @@
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 
-const offsets = [
-  { rotate: -3, x: -12, y: 0 },
-  { rotate: 2, x: 8, y: 12 },
-  { rotate: -1, x: -2, y: 24 },
-];
+const tilt = [-3, 2, -2];
+const lift = [0, 14, 28];
 
 export default function ProjectStack({ projects = [] }) {
   if (!projects || projects.length === 0) return null;
 
   return (
-    <section className="w-full max-w-lg mx-auto py-6">
-      {/* Desktop / Tablet: Interactive Fanned Card Stack */}
-      <div className="hidden sm:block relative h-[380px] w-full">
-        {projects.slice(0, 3).map((p, i) => {
-          const o = offsets[i % offsets.length];
-          return (
-            <motion.div
-              key={p.slug}
-              className="absolute inset-0 w-full"
-              initial={false}
-              animate={{ rotate: o.rotate, x: o.x, y: o.y, zIndex: i }}
-              whileHover={{
-                rotate: 0,
-                y: o.y - 18,
-                scale: 1.02,
-                zIndex: 30,
-              }}
-              transition={{ type: "spring", stiffness: 280, damping: 20 }}
-            >
-              <ProjectCard project={p} index={i} className="h-full" />
-            </motion.div>
-          );
-        })}
+    <div className="w-full bg-surface border border-border rounded-card p-4 sm:p-6">
+      {/* Desktop / tablet: staggered row — no overlap, every card fully visible & clickable */}
+      <div className="hidden sm:grid sm:grid-cols-3 gap-5">
+        {projects.slice(0, 3).map((p, i) => (
+          <motion.div
+            key={p.slug}
+            initial={false}
+            animate={{ rotate: tilt[i % 3], y: lift[i % 3] }}
+            whileHover={{ rotate: 0, y: lift[i % 3] - 8, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 300, damping: 22 }}
+          >
+            <ProjectCard project={p} index={i} className="h-full" />
+          </motion.div>
+        ))}
       </div>
 
-      {/* Mobile: Clean Scrollable Vertical Stack */}
+      {/* Mobile: plain vertical stack, no rotation needed */}
       <div className="sm:hidden flex flex-col gap-4">
         {projects.slice(0, 3).map((p, i) => (
           <ProjectCard key={p.slug} project={p} index={i} />
         ))}
       </div>
-    </section>
+    </div>
   );
 }

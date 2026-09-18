@@ -29,28 +29,30 @@ const capabilities = [
 
 export default function Capabilities() {
   return (
-    <section className="max-w-content mx-auto px-4 sm:px-6 py-12 sm:py-16 border-t border-border">
-      <p className="text-sm text-muted mb-8">What I build</p>
+    <div className="bg-accent/5 border-y border-accent/10">
+      <section className="max-w-content mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <p className="text-sm text-accent font-medium mb-8">What I build</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {capabilities.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={item.title}
-              className="p-5 rounded-card border border-border hover:border-accent transition-colors duration-200"
-            >
-              <Icon className="w-5 h-5 text-accent mb-3" />
-              <h3 className="font-display font-semibold text-text mb-1">
-                {item.title}
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    </section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {capabilities.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="p-5 rounded-card border border-border bg-card hover:border-accent transition-colors duration-200"
+              >
+                <Icon className="w-5 h-5 text-accent mb-3" />
+                <h3 className="font-display font-semibold text-text mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </div>
   );
 }
