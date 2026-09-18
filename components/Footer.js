@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="border-t border-border mt-20 sm:mt-28">
       <div className="max-w-content mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted">
-          Built by <span className="text-text font-medium">Utso</span> ©{" "}
+          Built by <span className="text-text font-medium">Utso Mondal</span> ©{" "}
           {new Date().getFullYear()}
         </p>
 
