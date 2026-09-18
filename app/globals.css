@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #14161A;
+}
+
+::selection {
+  background-color: #1266C4;
+  color: #FFFFFF;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #1266C4;
+  outline-offset: 3px;
+}
+
+/* Custom cursor — only enabled by CustomCursor.js on fine-pointer,
+   motion-friendly devices. Falls back to the normal cursor everywhere else. */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  margin-top: -3px;
+  background: #1266C4;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  margin-top: -15px;
+  border: 1.5px solid #1266C4;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.45;
+  transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease,
+    opacity 0.2s ease, background-color 0.2s ease;
+  will-change: transform;
+}
+
+.cursor-ring.cursor-ring-hover {
+  width: 54px;
+  height: 54px;
+  margin-left: -27px;
+  margin-top: -27px;
+  opacity: 0.12;
+  background: #1266C4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
