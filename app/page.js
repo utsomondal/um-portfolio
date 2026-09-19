@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import TechStack from "@/components/TechStack";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Capabilities from "@/components/Capabilities";
-import ContactCTA from "@/components/ContactCTA";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const projects = getAllProjects();
@@ -14,7 +14,7 @@ export default function Home() {
       <TechStack />
       <FeaturedProjects projects={projects} />
       <Capabilities />
-      <ContactCTA />
+      <Contact />
     </main>
   );
 }
