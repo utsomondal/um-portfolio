@@ -47,6 +47,7 @@ export default function Navbar() {
             UtsoDev
           </Link>
 
+          {/* Desktop Nav Links */}
           <div className="hidden sm:flex items-center gap-1 bg-surface p-1 rounded-full border border-border/60">
             {NAV_LINKS.map((link) => {
               const isActive = checkIsActive(link.href);
@@ -62,7 +63,11 @@ export default function Navbar() {
                     <motion.span
                       layoutId="active-pill"
                       className="absolute inset-0 bg-card rounded-full border border-border shadow-sm"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                      }}
                     />
                   )}
                   <span className="relative z-10">{link.label}</span>
@@ -71,14 +76,16 @@ export default function Navbar() {
             })}
           </div>
 
-          <a
-            href="mailto:hello@example.com"
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 bg-text text-bg text-xs font-medium rounded-full hover:bg-accent transition-colors duration-200 group"
+          {/* Desktop CTA: Smooth Scroll to Contact Section */}
+          <Link
+            href="/#contact"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 bg-text text-bg text-xs font-medium rounded-full hover:bg-accent hover:text-white transition-colors duration-200 group"
           >
             <span>Get in touch</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
-          </a>
+          </Link>
 
+          {/* Mobile Hamburger Button */}
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -106,6 +113,7 @@ export default function Navbar() {
           </button>
         </nav>
 
+        {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -131,13 +139,13 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <a
-                href="mailto:hello@example.com"
-                className="mt-1 px-3 py-2.5 rounded-xl bg-text text-bg font-medium text-center inline-flex items-center justify-center gap-1.5"
+              <Link
+                href="/#contact"
+                className="mt-1 px-3 py-2.5 rounded-xl bg-text text-bg font-medium text-center inline-flex items-center justify-center gap-1.5 active:scale-95 transition-transform"
               >
                 <span>Get in touch</span>
                 <ArrowUpRight className="w-4 h-4 shrink-0" />
-              </a>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

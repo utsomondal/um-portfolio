@@ -37,7 +37,11 @@ export default function Contact() {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 border-t border-border/40">
+    /* id="contact" এবং scroll-mt-24 যোগ করা হয়েছে যাতে Fixed Navbar-এর নিচে কন্টেন্ট ঢেকে না যায় */
+    <section
+      id="contact"
+      className="scroll-mt-24 max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 border-t border-border/40"
+    >
       <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
         {/* Left Column: Status Badge, Title, Text & Action Buttons */}
         <div className="space-y-4">

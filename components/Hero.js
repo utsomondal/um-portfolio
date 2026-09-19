@@ -18,7 +18,6 @@ export default function Hero() {
   return (
     <section className="max-w-content mx-auto px-4 sm:px-6 pt-28 sm:pt-40 pb-14 sm:pb-20">
       <div className="flex flex-col md:grid md:grid-cols-[1fr_280px] gap-10 md:gap-12 items-center">
-        
         {/* Left Column: Bio & Actions */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
@@ -36,10 +35,11 @@ export default function Hero() {
             <br className="hidden sm:block" /> products that ship.
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg text-muted leading-relaxed max-w-xl">
-            I&apos;m Utso Mondal, a final-year CSE student in Bangladesh. I
-            build React and Node applications end to end — from data model to
-            deployment.
+          <p className="mt-5 text-base sm:text-[17px] text-muted leading-relaxed max-w-xl">
+            I&apos;m Utso Mondal - a full-stack developer completing my CSE
+            degree at World University of Bangladesh. Specialized in the
+            React and Node.js ecosystem, currently open for full-time software
+            engineering opportunities.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -79,9 +79,8 @@ export default function Hero() {
         >
           {/* Main Avatar Wrapper */}
           <div className="group relative w-60 sm:w-68 h-60 sm:h-68 flex items-end justify-center">
-            
             {/* Ambient Background Glow */}
-            <div 
+            <div
               aria-hidden="true"
               className="absolute bottom-0 w-60 sm:w-68 h-60 sm:h-68 rounded-full bg-accent/20 blur-xl transition-opacity duration-500 group-hover:opacity-100"
             />
@@ -109,10 +108,8 @@ export default function Hero() {
               <MapPin className="w-3.5 h-3.5 text-accent shrink-0" />
               <span>Dhaka, BD</span>
             </div>
-
           </div>
         </motion.div>
-
       </div>
     </section>
   );
