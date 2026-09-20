@@ -38,7 +38,7 @@ export default function AboutPage() {
         <div className="md:col-span-4 rounded-card p-4 border border-border bg-card shadow-xs">
           <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden bg-surface mb-4">
             <Image
-              src="/images/utso-avatar.jpg"
+              src="/images/utso-headshot.png"
               alt="Utso Mondal"
               fill
               sizes="(max-width: 768px) 100vw, 320px"
