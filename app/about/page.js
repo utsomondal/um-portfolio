@@ -164,63 +164,123 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Tech Stack Matrix */}
+      {/* Tech Stack Matrix (UPDATED WITH CLEAN BADGE/PILL DESIGN) */}
       <div className="border-t border-border pt-12 mb-16">
         <h2 className="text-xs uppercase tracking-wider text-muted font-mono font-semibold mb-6">
           Technical Skills &amp; Stack
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="p-5 rounded-card border border-border bg-card">
-            <Layers className="w-5 h-5 text-accent mb-3" />
-            <h3 className="font-display font-semibold text-sm text-text mb-2">
-              Frontend
-            </h3>
-            <ul className="text-xs sm:text-sm text-muted space-y-1 font-mono">
-              <li>React.js &amp; Next.js</li>
-              <li>JavaScript (ES6+)</li>
-              <li>Tailwind CSS</li>
-              <li>Framer Motion</li>
-            </ul>
+          {/* Frontend */}
+          <div className="p-5 rounded-card border border-border bg-card flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
+                  <Layers className="w-4 h-4" />
+                </div>
+                <h3 className="font-display font-semibold text-sm text-text">
+                  Frontend
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  React.js &amp; Next.js
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  JavaScript (ES6+)
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Tailwind CSS
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Framer Motion
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="p-5 rounded-card border border-border bg-card">
-            <Server className="w-5 h-5 text-accent mb-3" />
-            <h3 className="font-display font-semibold text-sm text-text mb-2">
-              Backend
-            </h3>
-            <ul className="text-xs sm:text-sm text-muted space-y-1 font-mono">
-              <li>Node.js &amp; Express.js</li>
-              <li>RESTful API Design</li>
-              <li>JWT Authentication</li>
-              <li>System Architecture</li>
-            </ul>
+          {/* Backend */}
+          <div className="p-5 rounded-card border border-border bg-card flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
+                  <Server className="w-4 h-4" />
+                </div>
+                <h3 className="font-display font-semibold text-sm text-text">
+                  Backend
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Node.js &amp; Express.js
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  RESTful API Design
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  JWT Authentication
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  System Architecture
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="p-5 rounded-card border border-border bg-card">
-            <Database className="w-5 h-5 text-accent mb-3" />
-            <h3 className="font-display font-semibold text-sm text-text mb-2">
-              Databases &amp; Cloud
-            </h3>
-            <ul className="text-xs sm:text-sm text-muted space-y-1 font-mono">
-              <li>MongoDB</li>
-              <li>MongoDB Atlas</li>
-              <li>Deployment</li>
-              <li>Data Modeling</li>
-            </ul>
+          {/* Databases & Cloud */}
+          <div className="p-5 rounded-card border border-border bg-card flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
+                  <Database className="w-4 h-4" />
+                </div>
+                <h3 className="font-display font-semibold text-sm text-text">
+                  Databases &amp; Cloud
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  MongoDB
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  MongoDB Atlas
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Deployment
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Data Modeling
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="p-5 rounded-card border border-border bg-card">
-            <Wrench className="w-5 h-5 text-accent mb-3" />
-            <h3 className="font-display font-semibold text-sm text-text mb-2">
-              Tools &amp; Workflow
-            </h3>
-            <ul className="text-xs sm:text-sm text-muted space-y-1 font-mono">
-              <li>Git &amp; GitHub</li>
-              <li>Thunder Client API Testing</li>
-              <li>VS Code</li>
-              <li>Agile Workflow</li>
-            </ul>
+          {/* Tools & Workflow */}
+          <div className="p-5 rounded-card border border-border bg-card flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2 rounded-lg bg-accent/10 text-accent shrink-0">
+                  <Wrench className="w-4 h-4" />
+                </div>
+                <h3 className="font-display font-semibold text-sm text-text">
+                  Tools &amp; Workflow
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Git &amp; GitHub
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Thunder Client
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  VS Code
+                </span>
+                <span className="px-2.5 py-1 rounded-md bg-surface border border-border text-text">
+                  Agile Workflow
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
