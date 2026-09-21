@@ -1,20 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Copy, Check, MapPin } from "lucide-react";
+import { FileText, MapPin, ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("hello@example.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <section className="max-w-content mx-auto px-4 sm:px-6 pt-28 sm:pt-40 pb-14 sm:pb-20">
       <div className="flex flex-col md:grid md:grid-cols-[1fr_280px] gap-10 md:gap-12 items-center">
@@ -50,23 +41,17 @@ export default function Hero() {
               View projects
             </Link>
 
-            <button
-              onClick={handleCopyEmail}
-              type="button"
+            {/* View Resume Button */}
+            <a
+              href="/resume/Utso_Mondal_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-border text-sm font-medium text-text hover:border-accent hover:text-accent transition-colors duration-200 active:scale-95"
             >
-              {copied ? (
-                <>
-                  <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                  <span>Email copied</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-4 h-4 shrink-0" />
-                  <span>Copy email</span>
-                </>
-              )}
-            </button>
+              <FileText className="w-4 h-4 shrink-0" />
+              <span>View Resume</span>
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-70 shrink-0" />
+            </a>
           </div>
         </motion.div>
 
@@ -90,7 +75,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-tr from-accent/15 via-transparent to-transparent" />
             </div>
 
-            {/* Pop-Out Image Frame: Height 118% allows top head pop-out, rounded-b-full clips bottom */}
+            {/* Pop-Out Image Frame */}
             <div className="relative w-60 sm:w-68 h-[118%] z-10 overflow-hidden rounded-b-full">
               <Image
                 src="/images/utso-headshot-bg.png"
