@@ -1,0 +1,40 @@
+{
+  "slug": "devlinks",
+  "order": 2,
+  "title": "DevLinks",
+  "tagline": "Developer-focused bio-link platform built with MERN — one shareable profile for GitHub, LinkedIn, portfolio, and skills.",
+  "status": "Deployed",
+  "heroImage": "/projects/devlinks.png",
+  "architectureImage": "/projects/devlinks-architecture-dfd.png",
+  "stats": [
+    { "label": "Architecture", "value": "MERN + RBAC" },
+    { "label": "Security", "value": "HttpOnly JWT" },
+    { "label": "Deploy", "value": "Vercel + Render" }
+  ],
+  "tech": [
+    "React",
+    "Vite",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Tailwind CSS",
+    "DaisyUI",
+    "JWT",
+    "Zod",
+    "Cloudinary"
+  ],
+  "liveUrl": "https://devlinks-bd.vercel.app",
+  "repoUrl": "https://github.com/utsomondal/devlinks",
+  "problem": "Developers scatter their presence across GitHub, LinkedIn, portfolios, and side projects, forcing recruiters to piece context together manually. Generic link-in-bio tools lack developer-centric structure, role-based demos, and production patterns such as secure auth, moderation, and link analytics.",
+  "approach": [
+    "**HttpOnly JWT sessions:** Auth tokens are issued in `HttpOnly` cookies with production `SameSite=None` and `Secure` flags so the SPA on Vercel can talk to the API on Render without exposing tokens to JavaScript.",
+    "**RBAC with safe demos:** User and admin roles power separate surfaces — a profile/links dashboard for developers and a moderation panel for admins — including guest logins and demo-admin delete limits so public demos cannot wipe real accounts.",
+    "**Modular product API:** Express routes for auth, users, links, public profiles, and admin stats, with Zod validation, soft delete, Cloudinary avatars, click/view counters, and a shareable `/u/:username` page."
+  ],
+  "challenges": [
+    "**Cross-origin auth & CORS:** Fixed credentialed requests between Vercel and Render by aligning `CLIENT_URL` (no trailing slash), enabling CORS credentials, and tuning cookie policy for cross-site sessions.",
+    "**Soft-delete vs unique indexes:** Guest re-login after soft delete collided on unique username/email; resolved by restoring soft-deleted guest documents instead of inserting duplicates.",
+    "**SPA deep links in production:** Direct visits to `/u/:username` 404’d on Vercel until client-side routes were rewritten to `index.html`."
+  ],
+  "result": "Deployed end-to-end with guest user/admin demos, live dashboard preview, drag-and-drop link ordering, QR share, and an admin control panel. Delivers a recruiter-ready public profile flow backed by production-minded auth, validation, and moderation rules."
+}
